@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Задачи{% endblock %}
+{% block content %}
+    <h1>TO DO LIST</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Задача</th>
+                <th>Готовность</th>
+                <th colspan="3">Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+                <tr>
+                    <td>{% if task.status == 'done' %}<s>{% endif %}{{ task.name }}{% if task.status == 'done' %}</s>{% endif %}</td>
+                    <td>{% if task.status == 'new' %}Новая{% elif task.status == 'in_progress' %}В процессе{% elif task.status == 'done' %}Выполнено{% endif %}</td>
+                    <td>{% if task.status != 'done' %}<form action="{% url 'task_do' task.pk %}" method="post" class="complete">{% csrf_token %}<button type="submit">Выполнить</button></form>{% endif %}</td>
+                    <td><a href = "{% url 'task_delete' task.pk %}">Удалить</a></td>
+                    <td><a href = "{% url 'task_edit' task.pk %}">Редактировать</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% csrf_token %}
+    <button class="action"><a href = "{% url 'delete_all' %}">УДАЛИТЬ ВЫПОЛНЕННЫЕ</a></button>
+    <h2>Добавить новую задачу:</h2>
+    <form action="{% url 'task_create' %}" method="post">
+        {% csrf_token %}
+        <input class="entry_field" type="text" required placeholder="Надо сделать:" name="task_name">
+        <input class="action" type="submit" value="ДОБАВИТЬ">
+    </form>
+{% endblock %}

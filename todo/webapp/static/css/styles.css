@@ -1,0 +1,96 @@
+h1 {
+    text-align: center;
+    color: gold;
+}
+
+h2 {
+    color: gold;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+a, a:visited {
+    color: moccasin;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+  color: gold;
+}
+
+body {
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    color: antiquewhite;
+    background-color: #222222;
+}
+
+.container {
+    max-width: 80%;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    text-align: left;
+}
+
+th, td {
+    border: solid 1px gray;
+    padding: 3px 5px;
+}
+thead th {
+    color: forestgreen;
+}
+
+form.complete button {
+    padding: 0;
+    background: none;
+    border: none;
+    color: moccasin;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+}
+
+form.complete button:hover, button:active {
+    color: gold;
+}
+
+.action {
+    color: moccasin;
+    background-color: forestgreen;
+    border: 1px solid forestgreen;
+    font-size: 15px;
+    padding: 4px 12px;
+}
+
+.action:hover, .action:active {
+    color: gold;
+}
+
+
+table {
+    margin-bottom: 30px;
+}
+
+.entry_field {
+    font-size: 18px;
+    background-color: antiquewhite;
+    color: #222222;
+}
+
+.entry_field:focus {
+    outline-color: gold;
+}
+
+.select_status {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 18px;
+    background-color: antiquewhite;
+}
